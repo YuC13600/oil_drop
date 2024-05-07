@@ -7,11 +7,11 @@ with open('no_chart.csv', newline='') as f:
     del rows[0]
 
     # print smallest Q
-    smallest = rows[0][5]
+    smallest = float(rows[0][5])
     for row in rows:
-        smallest = row[5] if row[5] < smallest else smallest
+        smallest = float(row[5]) if float(row[5]) < smallest else smallest
 
-    print('smallest Q: ' + smallest)
+    print('smallest Q: {:.2e}'.format(smallest))
 
     # use +-4% as error
     error = 0.04
@@ -22,7 +22,7 @@ with open('no_chart.csv', newline='') as f:
         row.append(Q * (1 - error))
         row.append(Q * (1 + error))
 
-    # since the smallest Q is 1.71887E-18
+    # since the smallest Q is 7.1771e-19
     # we can suppose that e is less than or equal to it
     # thus we use loop that take 120% of smallest Q as initial_value
     # and to find the answer with three digits fraction part
@@ -40,7 +40,7 @@ with open('no_chart.csv', newline='') as f:
                 flag = True
 
         if flag:
-            e -= 0.001E-18
+            e -= 0.001E-19
 
     print('e = ' + str(e))
 
