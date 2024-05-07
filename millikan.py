@@ -11,7 +11,7 @@ with open('no_chart.csv', newline='') as f:
     for row in rows:
         smallest = float(row[5]) if float(row[5]) < smallest else smallest
 
-    print('smallest Q: {:.2e}'.format(smallest))
+    print('smallest Q: {:.1e}'.format(smallest))
 
     # use +-4% as error
     error = 0.04
