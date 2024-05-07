@@ -22,14 +22,14 @@ with open('no_chart.csv', newline='') as f:
         row.append(Q * (1 - error))
         row.append(Q * (1 + error))
 
-    # since the smallest Q is 7.1771e-19
+    # since the smallest Q is 7.2e-19
     # we can suppose that e is less than or equal to it
-    # thus we use loop that take 120% of smallest Q as initial_value
+    # thus we use loop that take 104% of smallest Q as initial_value
     # and to find the answer with three digits fraction part
-    # it decrement 0.001E-18 each time
+    # it decrement 0.001E-19 each time
     e = float(smallest) * (1 + error)
     flag = True
-    while(flag):
+    while flag:
         flag = False
 
         for row in rows:
