@@ -42,6 +42,6 @@ with open('no_chart.csv', newline='') as f:
         if flag:
             e -= 0.001E-19
 
-    print('e = ' + str(e))
+    print('e = {:.3e}'.format(e))
 
 
